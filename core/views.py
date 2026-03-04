@@ -1,0 +1,14 @@
+from rest_framework import viewsets
+from .models import Categoria, Produto
+from .serializers import CategoriaSerializer, ProdutoSerializer
+
+class CategoriaViewSet(viewsets.ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+class ProdutoViewSet(viewsets.ModelViewSet):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
+    # aqui eu criei duas classes de viewsets,
+    #  uma para categoria e outra para produto, onde cada classe
+    #  tem um queryset e um serializer_class correspondente.
